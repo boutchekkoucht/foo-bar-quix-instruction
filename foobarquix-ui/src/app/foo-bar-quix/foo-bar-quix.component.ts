@@ -17,6 +17,8 @@ export class FooBarQuixComponent implements OnInit, OnDestroy {
   }
 
   convertNumber(inputNumber: number): void {
+
+    console.log("oooooppp", inputNumber)
   }
 
 }
