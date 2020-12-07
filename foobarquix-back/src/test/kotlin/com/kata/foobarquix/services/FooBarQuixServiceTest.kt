@@ -24,12 +24,13 @@ class FooBarQuixServiceTest {
 	}
 	@Test
 	fun replaceIfContainsTest(){
-		assertEquals("Foo", fooBarQuixService.replaceIfContains("3", "3", "Foo"))
-		assertEquals("Bar", fooBarQuixService.replaceIfContains("5", "5", "Bar"))
-		assertEquals("Quix", fooBarQuixService.replaceIfContains("7", "7", "Quix"))
-		assertEquals("", fooBarQuixService.replaceIfContains("5", "3", "Foo"))
-		assertEquals("", fooBarQuixService.replaceIfContains("6", "5", "Bar"))
-		assertEquals("", fooBarQuixService.replaceIfContains("3", "7", "Quix"))
+		assertEquals("Foo", fooBarQuixService.replaceIfContains("3"))
+		assertEquals("Bar", fooBarQuixService.replaceIfContains("5"))
+		assertEquals("BarFoo", fooBarQuixService.replaceIfContains("53"))
+		assertEquals("Quix", fooBarQuixService.replaceIfContains("7"))
+		assertEquals("Bar", fooBarQuixService.replaceIfContains("5"))
+		assertEquals("", fooBarQuixService.replaceIfContains("6"))
+		assertEquals("FooFoo", fooBarQuixService.replaceIfContains("33"))
 	}
 	
 	@Test

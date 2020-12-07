@@ -6,15 +6,21 @@ import org.springframework.stereotype.Component
 class FooBarQuixService {
 
     fun convertNumber(inputNumber: Int): String {
-        return ""
+		var convertedNumber = ""
+		convertedNumber +=  replaceIfDiv(inputNumber, 3, "Foo");
+		convertedNumber +=  replaceIfDiv(inputNumber, 5, "Bar");	
+		convertedNumber +=  replaceDigits(inputNumber.toString());
+        return if ("".equals(convertedNumber)) inputNumber.toString() else convertedNumber
     }
 	
-	fun replaceIfContains(inputNumber: String, searchedString: String, replaceWith: String): String {
-		return if (inputNumber.contains(searchedString))  replaceWith else "";
+	fun replaceDigits(inputNumber: String): String {
+
+			return ""
+		
 	}
 	
 	fun replaceIfDiv(inputNumber: Int, divisor: Int, replaceWith: String): String {
-		return ""
+		return return if (inputNumber % divisor === 0)  replaceWith else "";
 	}
 
 }
