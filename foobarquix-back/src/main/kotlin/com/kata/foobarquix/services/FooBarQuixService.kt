@@ -10,7 +10,7 @@ class FooBarQuixService {
     }
 	
 	fun replaceIfContains(inputNumber: String, searchedString: String, replaceWith: String): String {
-		return ""
+		return if (inputNumber.contains(searchedString))  replaceWith else "";
 	}
 	
 	fun replaceIfDiv(inputNumber: Int, divisor: Int, replaceWith: String): String {
