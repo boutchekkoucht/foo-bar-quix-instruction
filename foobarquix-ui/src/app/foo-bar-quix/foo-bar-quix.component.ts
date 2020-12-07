@@ -10,7 +10,7 @@ import { FooBarQuixService } from '../foo-bar-quix.service';
 export class FooBarQuixComponent implements OnInit, OnDestroy {
 
   constructor(private fooBarQuixService: FooBarQuixService) { }
-  his: new Map();
+  numbersConverted : NumberConverted []= [];
 
   ngOnInit(): void {
   }
@@ -19,11 +19,10 @@ export class FooBarQuixComponent implements OnInit, OnDestroy {
   }
 
   convertNumber(inputNumber: number): void {
-    console.log("########################")
+    
     this.fooBarQuixService.convertInput(inputNumber).subscribe(res => {
-      console.log("---" , res)
+      this.numbersConverted.push({numberToConvert: inputNumber, result: res['result']})
     })
-    console.log("oooooppp", inputNumber)
   }
 
 }

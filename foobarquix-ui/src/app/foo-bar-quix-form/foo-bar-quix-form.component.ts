@@ -24,7 +24,6 @@ export class FooBarQuixFormComponent implements OnInit {
 
   submitNumber(): void {
     if(this.fooBarQuixForm.valid) {
-      console.log("log ", this.inputNumber.value)
       this.submitNumberOutput.emit(this.inputNumber.value);
     } else {
       console.log("i'm supposed to post a message in html :p")
