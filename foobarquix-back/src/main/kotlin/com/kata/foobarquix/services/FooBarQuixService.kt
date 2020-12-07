@@ -14,9 +14,17 @@ class FooBarQuixService {
     }
 	
 	fun replaceDigits(inputNumber: String): String {
-
-			return ""
-		
+		return inputNumber.toCharArray().map {	
+			it -> 
+			    var result = when(it) {
+			    '3' -> "Foo"
+			    '5' -> "Bar"
+			    '7' -> "Quix"
+			    else -> ""	
+			}
+			
+		   result
+		}.joinToString(separator = "")
 	}
 	
 	fun replaceIfDiv(inputNumber: Int, divisor: Int, replaceWith: String): String {
