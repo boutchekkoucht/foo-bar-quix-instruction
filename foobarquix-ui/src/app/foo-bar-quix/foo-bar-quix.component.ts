@@ -1,3 +1,4 @@
+import { MapType } from '@angular/compiler';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FooBarQuixService } from '../foo-bar-quix.service';
@@ -9,6 +10,7 @@ import { FooBarQuixService } from '../foo-bar-quix.service';
 export class FooBarQuixComponent implements OnInit, OnDestroy {
 
   constructor(private fooBarQuixService: FooBarQuixService) { }
+  his: new Map();
 
   ngOnInit(): void {
   }
@@ -17,7 +19,10 @@ export class FooBarQuixComponent implements OnInit, OnDestroy {
   }
 
   convertNumber(inputNumber: number): void {
-
+    console.log("########################")
+    this.fooBarQuixService.convertInput(inputNumber).subscribe(res => {
+      console.log("---" , res)
+    })
     console.log("oooooppp", inputNumber)
   }
 
